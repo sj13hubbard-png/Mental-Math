@@ -1,0 +1,914 @@
+<title>Mental Math Gym</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Math Gym">
+<meta name="theme-color" content="#0A0909">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap">
+<style>
+/* Layout: one-screen phone app. Each tab = scrollable body + pinned action; play view = problem stage over a thumb-height keypad.
+   Single committed look: black with a red accent. */
+:root {
+  color-scheme: dark;
+  --bg: #0A0909;
+  --surface: #151212;
+  --surface2: #1E1918;
+  --line: #2E2625;
+  --ink: #F3EEEC;
+  --muted: #9C908D;
+  --red: #E2302A;
+  --red-ink: #FFFFFF;
+  --red-soft: rgba(226, 48, 42, .24);
+  --good: #5BC98C;
+  --serif: "Source Serif 4", "Iowan Old Style", Georgia, serif;
+  --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { min-height: 100%; background: var(--bg); }
+body {
+  margin: 0; min-height: 100%;
+  background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 16px;
+  touch-action: manipulation; -webkit-tap-highlight-color: transparent; -webkit-user-select: none; user-select: none;
+}
+.app {
+  max-width: 480px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 10px calc(84px + env(safe-area-inset-bottom, 0px));
+}
+.view { display: flex; flex-direction: column; gap: 12px; }
+.scroll, .stack { display: flex; flex-direction: column; gap: 12px; }
+button { font: inherit; color: inherit; cursor: pointer; border: 0; background: none; }
+button:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
+button:disabled { opacity: .4; cursor: default; }
+
+.head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-top: 4px; }
+.head h1 { font-family: var(--serif); font-weight: 600; font-size: 1.7rem; letter-spacing: -0.01em; margin: 0; text-wrap: balance; }
+.head h1 em { font-style: normal; color: var(--red); }
+.sub { font-size: 0.8rem; color: var(--muted); font-variant-numeric: tabular-nums; text-align: right; }
+.label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 0 0 8px; display: flex; justify-content: space-between; align-items: baseline; }
+/* collapsible section cards */
+.sec { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; }
+.sec > summary { list-style: none; display: flex; align-items: center; gap: 10px; padding: 14px 16px; cursor: pointer; min-height: 52px; }
+.sec > summary::-webkit-details-marker { display: none; }
+.sec > summary .label { margin: 0; flex: 1; }
+.sec > summary .cur { font-family: var(--serif); font-weight: 600; font-size: 1rem; color: var(--ink); text-align: right; font-variant-numeric: tabular-nums; }
+.sec > summary::after {
+  content: ""; width: 8px; height: 8px; flex-shrink: 0; margin: 0 2px 4px 4px;
+  border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: rotate(45deg); transition: transform .15s;
+}
+.sec[open] > summary::after { transform: rotate(-135deg); margin-bottom: -4px; }
+.sec[open] > summary .cur { color: var(--muted); font-weight: 500; }
+.sec > .body { padding: 0 16px 16px; }
+.sec .chip:not([aria-pressed="true"]) { background: var(--surface2); }
+.sec .card { background: var(--surface2); border-color: transparent; margin-top: 14px; }
+.minirow { display: flex; justify-content: flex-end; gap: 18px; margin-top: 12px; }
+.minirow button { color: var(--red); font-size: 0.85rem; font-weight: 600; padding: 4px 0; }
+.note { font-size: 0.78rem; color: var(--muted); margin: 0 0 10px; }
+
+.seg { display: grid; gap: 6px; }
+.g5 { grid-template-columns: repeat(5, 1fr); }
+.g3 { grid-template-columns: repeat(3, 1fr); }
+.g2 { grid-template-columns: repeat(2, 1fr); }
+.g6 { grid-template-columns: repeat(6, 1fr); }
+.chip {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 11px 6px;
+  font-weight: 600; text-align: center; font-size: 0.95rem; transition: background .12s, border-color .12s;
+}
+.chip.sym { font-family: var(--serif); font-size: 1.45rem; font-weight: 500; padding: 6px 0; }
+.chip.num { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; padding: 9px 0; font-variant-numeric: tabular-nums; }
+.chip small { display: block; font-weight: 400; font-size: 0.72rem; color: var(--muted); margin-top: 2px; }
+.chip[aria-pressed="true"] { background: var(--red); border-color: var(--red); color: var(--red-ink); }
+.chip[aria-pressed="true"] small { color: var(--red-ink); opacity: .85; }
+
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 14px 16px; }
+.sample { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.sample .eq { font-family: var(--serif); font-size: 1.5rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+.sample .how { font-size: 0.8rem; color: var(--muted); margin-top: 2px; }
+.sample .best { text-align: right; font-size: 0.75rem; color: var(--muted); }
+.sample .best b { display: block; font-family: var(--serif); font-size: 1.35rem; color: var(--ink); }
+.go {
+  background: var(--red); color: var(--red-ink); border-radius: 16px; padding: 17px; font-size: 1.08rem; font-weight: 700; flex-shrink: 0;
+}
+.go:active:not(:disabled) { transform: scale(.98); }
+.view > .go { position: sticky; bottom: calc(74px + env(safe-area-inset-bottom, 0px)); z-index: 5; box-shadow: 0 -14px 18px 2px var(--bg), 0 10px 0 6px var(--bg); }
+.hint { font-size: 0.76rem; color: var(--muted); text-align: center; line-height: 1.45; margin: 0; }
+
+/* fact grid */
+.gridwrap { overflow-x: auto; }
+.grid { display: grid; grid-template-columns: 20px repeat(12, minmax(22px, 1fr)); gap: 2px; min-width: 300px; font-variant-numeric: tabular-nums; }
+.grid .h { font-size: 0.66rem; color: var(--muted); display: grid; place-items: center; font-weight: 600; }
+.grid .h.lab { aspect-ratio: auto; height: 18px; }
+.cell {
+  aspect-ratio: 1; border-radius: 5px; background: var(--surface2); color: var(--muted);
+  font-size: 0.62rem; display: grid; place-items: center; padding: 0; border: 1px solid transparent; font-weight: 600;
+}
+.cell.s1 { border-color: var(--red); color: var(--red); background: var(--surface); }
+.cell.s2 { background: var(--red-soft); color: var(--ink); }
+.cell.s3 { background: var(--red); color: var(--red-ink); }
+.cell.off { opacity: .28; }
+.cell.sel { outline: 2px solid var(--ink); outline-offset: 0; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 0.72rem; color: var(--muted); margin-top: 10px; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend i { width: 11px; height: 11px; border-radius: 3px; display: inline-block; background: var(--surface2); border: 1px solid transparent; }
+.legend i.s1 { border-color: var(--red); background: var(--surface); }
+.legend i.s2 { background: var(--red-soft); }
+.legend i.s3 { background: var(--red); }
+
+/* technique card (shared) */
+.tech { font-size: 0.95rem; line-height: 1.5; }
+.tech .verdict { font-size: 0.8rem; font-weight: 700; letter-spacing: .04em; margin-bottom: 6px; color: var(--muted); }
+.tech .verdict.ok { color: var(--good); }
+.tech .verdict.no { color: var(--red); }
+.tech .name { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; margin-bottom: 6px; }
+.tech ol { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 4px; }
+.tech li { font-family: var(--serif); font-size: 1.05rem; font-variant-numeric: tabular-nums; padding-left: 14px; position: relative; }
+.tech li::before { content: ""; position: absolute; left: 0; top: .62em; width: 6px; height: 2px; background: var(--red); }
+.tech .placeholder { color: var(--muted); font-size: 0.88rem; }
+
+.anchors { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.anchors div { background: var(--surface2); border-radius: 10px; padding: 8px 10px; display: flex; justify-content: space-between; font-family: var(--serif); font-variant-numeric: tabular-nums; }
+.anchors div b { font-weight: 600; }
+.anchors div span { color: var(--muted); }
+
+/* tab bar */
+.tabs {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 10; background: var(--bg);
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; border-top: 1px solid var(--line);
+  padding-top: 6px; padding-bottom: calc(6px + env(safe-area-inset-bottom, 0px));
+  padding-left: max(16px, env(safe-area-inset-left, 0px), calc((100% - 448px) / 2));
+  padding-right: max(16px, env(safe-area-inset-right, 0px), calc((100% - 448px) / 2));
+}
+.tab { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; height: 50px; color: var(--muted); font-size: 0.7rem; font-weight: 600; border-radius: 10px; }
+.tab b { font-family: var(--serif); font-size: 1.35rem; font-weight: 500; line-height: 1.1; }
+.tab[aria-selected="true"] { color: var(--red); }
+
+/* play: full-screen layer so the keypad stays put */
+#v-play {
+  position: fixed; inset: 0; z-index: 20; background: var(--bg);
+  padding-top: calc(10px + env(safe-area-inset-top, 0px));
+  padding-bottom: calc(8px + env(safe-area-inset-bottom, 0px));
+  padding-left: max(16px, env(safe-area-inset-left, 0px), calc((100% - 448px) / 2));
+  padding-right: max(16px, env(safe-area-inset-right, 0px), calc((100% - 448px) / 2));
+}
+.bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-shrink: 0; }
+.quit { color: var(--muted); font-size: 0.9rem; padding: 6px 0; }
+.meter { flex: 1; height: 5px; background: var(--line); border-radius: 3px; overflow: hidden; }
+.meter i { display: block; height: 100%; background: var(--red); width: 0%; transition: width .25s linear; }
+.score { font-family: var(--serif); font-weight: 600; font-variant-numeric: tabular-nums; min-width: 3.5ch; text-align: right; }
+.stage { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 12px; min-height: 0; overflow-y: auto; }
+.problem { font-family: var(--serif); font-weight: 600; font-size: clamp(2.4rem, 12vw, 3.6rem); letter-spacing: -0.01em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.answer {
+  font-family: var(--serif); font-weight: 700; font-size: clamp(2.3rem, 11.5vw, 3.4rem); min-height: 1.25em; line-height: 1.25;
+  min-width: 4ch; text-align: center; border-bottom: 2px solid var(--line); padding: 0 10px; font-variant-numeric: tabular-nums;
+}
+.answer.good { color: var(--good); border-color: var(--good); }
+.answer.bad { color: var(--red); border-color: var(--red); animation: shake .3s; }
+@keyframes shake { 25% { transform: translateX(-8px) } 75% { transform: translateX(8px) } }
+.showme { font-size: 0.85rem; color: var(--muted); text-decoration: underline; text-underline-offset: 3px; padding: 4px 8px; }
+.stage .card { width: 100%; box-sizing: border-box; }
+.pad { display: grid; grid-template-columns: repeat(3, 1fr) 1.15fr; gap: 7px; flex-shrink: 0; }
+.key {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 14px; height: 58px;
+  font-family: var(--serif); font-size: 1.6rem; font-weight: 600;
+}
+.key:active, .key.flash { background: var(--surface2); }
+.key.enter { grid-row: span 2; height: auto; background: var(--red); border-color: var(--red); color: var(--red-ink); font-family: var(--sans); font-size: 1rem; font-weight: 700; }
+.key.zero { grid-column: span 3; }
+.key.util { font-family: var(--sans); font-size: 1.05rem; color: var(--muted); }
+.key.dot:disabled { opacity: .2; }
+.nextwrap { flex-shrink: 0; }
+.nextwrap .go { width: 100%; padding: 22px; }
+
+/* results */
+.big { text-align: center; padding-top: 14px; }
+.big .n { font-family: var(--serif); font-weight: 700; font-size: 4.6rem; line-height: 1; font-variant-numeric: tabular-nums; }
+.big .cap { color: var(--muted); margin-top: 6px; }
+.big .pb { display: inline-block; margin-top: 10px; background: var(--red); color: var(--red-ink); font-weight: 700; font-size: 0.78rem; padding: 4px 10px; border-radius: 99px; }
+.trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.trio div { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 10px; text-align: center; }
+.trio b { display: block; font-family: var(--serif); font-size: 1.3rem; font-variant-numeric: tabular-nums; }
+.trio span { font-size: 0.68rem; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
+.miss .q { font-family: var(--serif); font-weight: 600; font-size: 1.1rem; margin-bottom: 6px; display: flex; justify-content: space-between; gap: 10px; }
+.miss .q em { font-style: normal; color: var(--red); font-family: var(--sans); font-size: 0.78rem; font-weight: 600; }
+.miss .tech .name { font-size: 1rem; }
+.miss .tech li { font-size: 0.95rem; }
+.clean { color: var(--muted); text-align: center; padding: 18px 0; }
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; position: sticky; bottom: calc(10px + env(safe-area-inset-bottom, 0px)); z-index: 5; box-shadow: 0 -14px 18px 2px var(--bg), 0 10px 0 10px var(--bg); }
+.ghost { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 16px; font-weight: 600; }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+@media (max-height: 680px) { .key { height: 48px; } .view { gap: 10px; } .problem { font-size: 2.3rem; } .answer { font-size: 2.2rem; } }
+</style>
+
+<div class="app">
+  <!-- TRAIN -->
+  <section class="view" id="v-train">
+    <div class="scroll">
+      <div class="head"><h1>Mental Math <em>Gym</em></h1><div class="sub" id="lifetime">0 solved</div></div>
+      <details class="sec" data-sec="t-op" open>
+        <summary><span class="label">Operation</span><span class="cur" id="s-op"></span></summary>
+        <div class="body"><div class="seg g5" id="t-op">
+          <button class="chip sym" data-v="add" aria-label="Addition">+</button>
+          <button class="chip sym" data-v="sub" aria-label="Subtraction">−</button>
+          <button class="chip sym" data-v="mul" aria-label="Multiplication">×</button>
+          <button class="chip sym" data-v="div" aria-label="Division">÷</button>
+          <button class="chip sym" data-v="mix" aria-label="Mixed">±</button>
+        </div></div>
+      </details>
+      <details class="sec" data-sec="t-lv" open>
+        <summary><span class="label">Level</span><span class="cur" id="s-lv"></span></summary>
+        <div class="body"><div class="seg g3" id="t-lv">
+          <button class="chip" data-v="1">Easy<small></small></button>
+          <button class="chip" data-v="2">Medium<small></small></button>
+          <button class="chip" data-v="3">Hard<small></small></button>
+        </div></div>
+      </details>
+      <details class="sec" data-sec="t-mode" open>
+        <summary><span class="label">Mode</span><span class="cur" id="s-mode"></span></summary>
+        <div class="body"><div class="seg g2" id="t-mode">
+          <button class="chip" data-v="learn">Learn<small>Technique after every answer</small></button>
+          <button class="chip" data-v="sprint">Sprint<small>60 seconds, review after</small></button>
+        </div></div>
+      </details>
+      <div class="card sample">
+        <div><div class="eq" id="t-sample">48 × 52</div><div class="how" id="t-sample-how">Meet in the middle</div></div>
+        <div class="best">Best sprint<b id="t-best">—</b></div>
+      </div>
+      <p class="hint">To keep this on your iPhone, open it in Safari, tap Share, then tap <b>Add to Home Screen</b>.</p>
+    </div>
+    <button class="go" id="t-start">Start 20 problems</button>
+  </section>
+
+  <!-- TIMES TABLES -->
+  <section class="view" id="v-tables" hidden>
+    <div class="scroll">
+      <div class="head"><h1>Times <em>Tables</em></h1><div class="sub" id="m-count">0 of 78 mastered</div></div>
+      <details class="sec" data-sec="m-pick" open>
+        <summary><span class="label">Tables to practice</span><span class="cur" id="s-tables"></span></summary>
+        <div class="body">
+          <div class="seg g6" id="m-pick"></div>
+          <div class="minirow"><button id="m-all">Select all</button><button id="m-none">Clear</button></div>
+        </div>
+      </details>
+      <details class="sec" data-sec="m-grid" open>
+        <summary><span class="label">12 × 12 grid</span><span class="cur" id="s-mgrid"></span></summary>
+        <div class="body">
+          <div class="gridwrap"><div class="grid" id="m-grid"></div></div>
+          <div class="legend">
+            <span><i></i>Not tried</span><span><i class="s1"></i>Missed last time</span><span><i class="s2"></i>Learning</span><span><i class="s3"></i>Mastered</span>
+          </div>
+          <div class="card tech" id="m-tip"><p class="placeholder">Tap any square to see the fastest way to get that fact.</p></div>
+        </div>
+      </details>
+    </div>
+    <button class="go" id="m-start">Practice 20 facts</button>
+  </section>
+
+  <!-- DIVISION -->
+  <section class="view" id="v-div" hidden>
+    <div class="scroll">
+      <div class="head"><h1><em>Division</em></h1><div class="sub" id="d-count">0 of 144 mastered</div></div>
+      <div class="seg g2" id="d-kind">
+        <button class="chip" data-v="facts">Division facts<small>Up to 144 ÷ 12</small></button>
+        <button class="chip" data-v="frac">Fractions → decimals<small>3 ÷ 8 = 0.375</small></button>
+      </div>
+      <div id="d-facts" class="stack">
+        <details class="sec" data-sec="d-pick" open>
+          <summary><span class="label">Divide by</span><span class="cur" id="s-divs"></span></summary>
+          <div class="body">
+            <div class="seg g6" id="d-pick"></div>
+            <div class="minirow"><button id="d-all">Select all</button><button id="d-none">Clear</button></div>
+          </div>
+        </details>
+        <details class="sec" data-sec="d-grid" open>
+          <summary><span class="label">Division grid</span><span class="cur" id="s-dgrid"></span></summary>
+          <div class="body">
+            <p class="note">Row = the number you divide by. Column = the answer.</p>
+            <div class="gridwrap"><div class="grid" id="d-grid"></div></div>
+            <div class="legend">
+              <span><i></i>Not tried</span><span><i class="s1"></i>Missed last time</span><span><i class="s2"></i>Learning</span><span><i class="s3"></i>Mastered</span>
+            </div>
+            <div class="card tech" id="d-tip"><p class="placeholder">Tap any square to see the fastest way to get that answer.</p></div>
+          </div>
+        </details>
+      </div>
+      <div id="d-frac" class="stack" hidden>
+        <details class="sec" data-sec="f-pick" open>
+          <summary><span class="label">Bottom numbers</span><span class="cur" id="s-dens"></span></summary>
+          <div class="body">
+            <div class="seg g6" id="f-pick"></div>
+            <div class="minirow"><button id="f-all">Select all</button><button id="f-none">Clear</button></div>
+          </div>
+        </details>
+        <details class="sec" data-sec="f-anch" open>
+          <summary><span class="label">Anchors to memorize</span><span class="cur">12</span></summary>
+          <div class="body">
+            <p class="note">Type answers to 3 decimal places.</p>
+            <div class="anchors" id="f-anchors"></div>
+          </div>
+        </details>
+      </div>
+    </div>
+    <button class="go" id="d-start">Practice 20</button>
+  </section>
+
+  <!-- PLAY -->
+  <section class="view" id="v-play" hidden>
+    <div class="bar">
+      <button class="quit" id="quit">✕ Quit</button>
+      <div class="meter"><i id="meter"></i></div>
+      <div class="score" id="hud">0</div>
+    </div>
+    <div class="stage">
+      <div class="problem" id="problem"></div>
+      <div class="answer" id="answer"></div>
+      <button class="showme" id="showme">Show me how</button>
+      <div class="card tech" id="feedback" hidden></div>
+    </div>
+    <div class="pad" id="pad">
+      <button class="key" data-k="1">1</button><button class="key" data-k="2">2</button><button class="key" data-k="3">3</button>
+      <button class="key util" data-k="back" aria-label="Delete">⌫</button>
+      <button class="key" data-k="4">4</button><button class="key" data-k="5">5</button><button class="key" data-k="6">6</button>
+      <button class="key dot" data-k="." id="dotKey">.</button>
+      <button class="key" data-k="7">7</button><button class="key" data-k="8">8</button><button class="key" data-k="9">9</button>
+      <button class="key enter" data-k="enter">Enter</button>
+      <button class="key zero" data-k="0">0</button>
+    </div>
+    <div class="nextwrap" id="nextwrap" hidden><button class="go" id="next">Next</button></div>
+  </section>
+
+  <!-- RESULTS -->
+  <section class="view" id="v-done" hidden>
+    <div class="scroll">
+      <div class="big">
+        <div class="n" id="r-score">0</div>
+        <div class="cap" id="r-cap"></div>
+        <div class="pb" id="r-pb" hidden>New best</div>
+      </div>
+      <div class="trio">
+        <div><b id="r-acc">0%</b><span>Accuracy</span></div>
+        <div><b id="r-avg">0.0s</b><span>Avg time</span></div>
+        <div><b id="r-miss">0</b><span>To review</span></div>
+      </div>
+      <div>
+        <p class="label">Review</p>
+        <div id="r-review" style="display:flex;flex-direction:column;gap:8px"></div>
+      </div>
+    </div>
+    <div class="row2">
+      <button class="ghost" id="r-menu">Menu</button>
+      <button class="go" id="r-again">Go again</button>
+    </div>
+  </section>
+
+  <nav class="tabs" id="tabs" role="tablist">
+    <button class="tab" role="tab" data-tab="train"><b>±</b>Train</button>
+    <button class="tab" role="tab" data-tab="tables"><b>×</b>Times Tables</button>
+    <button class="tab" role="tab" data-tab="div"><b>÷</b>Division</button>
+  </nav>
+</div>
+
+<script>
+// ENGINE START
+const rnd = (a, b) => a + Math.floor(Math.random() * (b - a + 1));
+const pick = arr => arr[Math.floor(Math.random() * arr.length)];
+const T = (name, lines) => ({ name, lines: lines.filter(Boolean) });
+const places = n => { const h = Math.floor(n / 100) * 100, t = Math.floor((n % 100) / 10) * 10, o = n % 10; return [h, t, o].filter(Boolean); };
+const tensOnes = n => { const t = Math.floor(n / 10) * 10; return [t, n - t]; };
+
+function techAdd(a, b) {
+  const s = a + b, x = Math.max(a, b), y = Math.min(a, b), xo = x % 10, yo = y % 10;
+  if (y >= 10 && yo >= 8) { const r = y + 10 - yo; return T('Round up, then adjust', [`${y} is ${10 - yo} less than ${r}`, `${x} + ${r} = ${x + r}`, `${x + r} − ${10 - yo} = ${s}`]); }
+  if (y >= 10 && x >= 10 && xo >= 8) { const r = x + 10 - xo; return T('Round up, then adjust', [`${x} is ${10 - xo} less than ${r}`, `${r} + ${y} = ${r + y}`, `${r + y} − ${10 - xo} = ${s}`]); }
+  if (y < 10) {
+    if (xo + y > 10) { const g = 10 - xo; return T('Bridge through ten', [`Split ${y} into ${g} + ${y - g}`, `${x} + ${g} = ${x + g}`, `${x + g} + ${y - g} = ${s}`]); }
+    return T('Add the ones', [`${xo} + ${y} = ${xo + y}`, `${x - xo} + ${xo + y} = ${s}`]);
+  }
+  if (xo && yo && xo + yo === 10) return T('Pair the ones to make 10', [`${xo} + ${yo} = 10`, `${x - xo} + ${y - yo} = ${x - xo + y - yo}`, `${x - xo + y - yo} + 10 = ${s}`]);
+  const lines = [`Keep ${x}, add ${y} one place at a time`]; let cur = x;
+  for (const p of places(y)) { lines.push(`${cur} + ${p} = ${cur + p}`); cur += p; }
+  return T('Left to right', lines);
+}
+
+function techSub(a, b) {
+  const d = a - b, bo = b % 10, ao = a % 10;
+  if (b >= 10 && d > 0 && d <= 25 && d < b && Math.floor(a / 10) !== Math.floor(b / 10)) {
+    const r = Math.ceil(b / 10) * 10;
+    if (r === b) return T('Count up', [`From ${b} up to ${a} is ${d}`]);
+    return T('Count up instead', [`The numbers are close, so count up from ${b}`, `${b} → ${r} is ${r - b}`, `${r} → ${a} is ${a - r}`, `${r - b} + ${a - r} = ${d}`]);
+  }
+  if (b >= 10 && bo >= 7 && a >= b + 10 - bo) { const r = b + 10 - bo, k = 10 - bo; return T('Overshoot, then add back', [`${b} is ${k} less than ${r}`, `${a} − ${r} = ${a - r}`, `${a - r} + ${k} = ${d}`]); }
+  if (b < 10) {
+    if (ao < b && a >= 10) return T('Bridge through ten', [`Split ${b} into ${ao} + ${b - ao}`, `${a} − ${ao} = ${a - ao}`, `${a - ao} − ${b - ao} = ${d}`]);
+    return T('Subtract the ones', [`${ao} − ${b} = ${ao - b}`, `${a - ao} + ${ao - b} = ${d}`]);
+  }
+  const lines = [`Keep ${a}, take away ${b} one place at a time`]; let cur = a;
+  for (const p of places(b)) { lines.push(`${cur} − ${p} = ${cur - p}`); cur -= p; }
+  return T('Left to right', lines);
+}
+
+function techSquare(n) {
+  const p = n * n;
+  if (n <= 12) return T('Known square', [`${n} × ${n} = ${p}`, 'Squares up to 12² are worth memorizing cold']);
+  if (n % 10 === 0) return T('Square, then add zeros', [`${n / 10} × ${n / 10} = ${(n / 10) ** 2}`, `Add two zeros: ${p}`]);
+  if (n % 10 === 5) { const k = (n - 5) / 10; return T('Squares ending in 5', [`Take the front: ${k}`, `${k} × ${k + 1} = ${k * (k + 1)}`, `Put 25 on the end: ${p}`]); }
+  const r = Math.round(n / 10) * 10, d = Math.abs(n - r), o = 2 * n - r;
+  return T('Square by rounding', [`Move one ${n} to ${r}, the other the same ${d} the other way: ${o}`, `${r} × ${o} = ${r * o}`, `Add ${d}² = ${d * d}`, `${r * o} + ${d * d} = ${p}`]);
+}
+
+function techEleven(n) {
+  const t = Math.floor(n / 10), o = n % 10, s = t + o, p = n * 11;
+  if (s < 10) return T('The 11 trick', [`Spread ${n} apart: ${t} _ ${o}`, `Put ${t} + ${o} = ${s} in the gap`, `${p}`]);
+  return T('The 11 trick', [`Spread ${n} apart: ${t} _ ${o}`, `${t} + ${o} = ${s}: put ${s - 10} in the gap, carry the 1`, `${t} + 1 = ${t + 1}, so ${p}`]);
+}
+
+function techMul(a, b) {
+  const p = a * b, lo = Math.min(a, b), hi = Math.max(a, b);
+  if (a === b) return techSquare(a);
+  if ((a + b) % 2 === 0) {
+    const m = (a + b) / 2, h = (hi - lo) / 2;
+    if (m % 10 === 0 && m >= 20 && h <= 9) return T('Meet in the middle', [`Both are ${h} away from ${m}`, `${m}² = ${m * m}`, `${h}² = ${h * h}`, `${m * m} − ${h * h} = ${p}`]);
+  }
+  const pairs = [[a, b], [b, a]];
+  for (const [f, n] of pairs) if (f === 11 && n >= 10 && n <= 99) return techEleven(n);
+  for (const [f, n] of pairs) if (f === 25) return T('×25 is a quarter of ×100', [`${n} × 100 = ${n * 100}`, `Half: ${n * 50}`, `Half again: ${p}`]);
+  for (const [f, n] of pairs) if (f === 5 && n >= 10) return T('×5 is half of ×10', [`${n} × 10 = ${n * 10}`, `${n * 10} ÷ 2 = ${p}`]);
+  for (const [f, n] of pairs) if (f === 9 && n >= 10) return T('×9 is ×10 minus one', [`${n} × 10 = ${n * 10}`, `${n * 10} − ${n} = ${p}`]);
+  for (const [f, n] of pairs) if (f === 99) return T('×99 is ×100 minus one', [`${n} × 100 = ${n * 100}`, `${n * 100} − ${n} = ${p}`]);
+  for (const [f, n] of pairs) if (f % 10 === 5 && f > 5 && n % 2 === 0 && n > 2)
+    return T('Double and halve', [`Double ${f} → ${f * 2}, halve ${n} → ${n / 2}`, `${f * 2} × ${n / 2} = ${p}`]);
+  const nines = pairs.filter(([f]) => f >= 18 && f % 10 >= 8).sort((x, y) => (y[0] % 10) - (x[0] % 10));
+  if (nines.length) {
+    const [f, n] = nines[0], r = f + 10 - f % 10, k = 10 - f % 10;
+    return T('Round up, then take back', [`${f} is ${k} less than ${r}`, `${n} × ${r} = ${n * r}`, k === 1 ? '' : `${n} × ${k} = ${n * k}`, `${n * r} − ${n * k} = ${p}`]);
+  }
+  for (const [f, n] of pairs) if (f >= 21 && f % 10 === 1) return T('Round down, add one more', [`${n} × ${f - 1} = ${n * (f - 1)}`, `${n * (f - 1)} + ${n} = ${p}`]);
+  for (const [f, n] of pairs) if (f === 4 && n >= 10) return T('Double, double', [`${n} → ${n * 2} → ${p}`]);
+  for (const [f, n] of pairs) if (f === 8 && n >= 10) return T('Double three times', [`${n} → ${n * 2} → ${n * 4} → ${p}`]);
+  for (const [f, n] of pairs) if (f === 12 && n >= 10) return T('×12 is ×10 plus ×2', [`${n} × 10 = ${n * 10}`, `${n} × 2 = ${n * 2}`, `${n * 10} + ${n * 2} = ${p}`]);
+  if (lo < 10) {
+    const [t, o] = tensOnes(hi);
+    if (!o) return T('Multiply, add a zero', [`${t / 10} × ${lo} = ${(t / 10) * lo}`, `Add a zero: ${p}`]);
+    return T('Split and add', [`Split ${hi} into ${t} + ${o}`, `${t} × ${lo} = ${t * lo}`, `${o} × ${lo} = ${o * lo}`, `${t * lo} + ${o * lo} = ${p}`]);
+  }
+  const [t, o] = tensOnes(lo);
+  if (!o) return T('Multiply, add a zero', [`${hi} × ${t / 10} = ${hi * t / 10}`, `Add a zero: ${p}`]);
+  return T('Split and add', [`Split ${lo} into ${t} + ${o}`, `${hi} × ${t} = ${hi * t}`, `${hi} × ${o} = ${hi * o}`, `${hi * t} + ${hi * o} = ${p}`]);
+}
+
+function techDiv(n, d) {
+  const q = n / d;
+  if (d === 5) return T('÷5 is double, then ÷10', [`${n} × 2 = ${n * 2}`, `${n * 2} ÷ 10 = ${q}`]);
+  if (d === 25) return T('÷25 is ×4, then ÷100', [`${n} × 4 = ${n * 4}`, `${n * 4} ÷ 100 = ${q}`]);
+  if (d === 2) return T('Halve it', [`Half of ${n} = ${q}`]);
+  if (d === 4) return T('Halve twice', [`${n} → ${n / 2} → ${q}`]);
+  if (d === 8) return T('Halve three times', [`${n} → ${n / 2} → ${n / 4} → ${q}`]);
+  if (q <= 12 && d <= 12) return T('Think multiplication', [`${d} × ? = ${n}`, `${d} × ${q} = ${n}`]);
+  if (q % 10 === 0) return T('Think multiplication', [`${d} × ${q / 10} = ${d * q / 10}`, `Add a zero: ${d} × ${q} = ${n}`]);
+  if (q % 10 >= 8) {
+    const r = Math.ceil(q / 10) * 10;
+    return T('Overshoot, then step back', [`${d} × ${r} = ${d * r}`, `That's ${d * r - n} too much, which is ${d} × ${r - q}`, `${r} − ${r - q} = ${q}`]);
+  }
+  const c = Math.floor(q / 10) * 10, rest = n - d * c;
+  return T('Chunk it', [`${d} × ${c} = ${d * c}`, `${n} − ${d * c} = ${rest}`, `${rest} ÷ ${d} = ${q - c}`, `${c} + ${q - c} = ${q}`]);
+}
+
+const FACT_ORDER = [1, 10, 2, 5, 11, 9, 4, 3, 12, 6, 8, 7];
+function techFact(a, b) {
+  const p = a * b;
+  let f = a, n = b;
+  if (FACT_ORDER.indexOf(b) < FACT_ORDER.indexOf(a)) { f = b; n = a; }
+  if (a === b && [6, 7, 8, 12].includes(a)) return T('Square anchor', [`${a} × ${a} = ${p}`, 'Learn squares cold, then use them for neighbors', `${a} × ${a + 1} = ${p} + ${a} = ${p + a}`]);
+  switch (f) {
+    case 1: return T('×1 keeps it the same', [`${n} × 1 = ${p}`]);
+    case 10: return T('×10 adds a zero', [`${n} → ${p}`]);
+    case 2: return T('×2 is doubling', [`${n} + ${n} = ${p}`]);
+    case 5: return T('×5 is half of ×10', [`${n} × 10 = ${n * 10}`, `Half of ${n * 10} = ${p}`]);
+    case 11:
+      if (n <= 9) return T('×11 repeats the digit', [`${n} × 11 = ${p}`]);
+      if (n === 11) return T('Memorize this one', ['11 × 11 = 121']);
+      return T('×11 is ×10 plus one more', [`${n} × 10 = ${n * 10}`, `${n * 10} + ${n} = ${p}`]);
+    case 9: {
+      const chk = n <= 10 ? `Check: ${String(p).split('').join(' + ')} = 9` : '';
+      return T('×9 is ×10 minus one', [`${n} × 10 = ${n * 10}`, `${n * 10} − ${n} = ${p}`, chk]);
+    }
+    case 4: return T('Double, double', [`${n} → ${n * 2} → ${p}`]);
+    case 3: return T('Double, plus one more', [`${n} × 2 = ${n * 2}`, `${n * 2} + ${n} = ${p}`]);
+    case 12: return T('×12 is ×10 plus ×2', [`${n} × 10 = ${n * 10}`, `${n} × 2 = ${n * 2}`, `${n * 10} + ${n * 2} = ${p}`]);
+    case 6: return T('×6 is ×5 plus one more', [`${n} × 5 = ${n * 5}`, `${n * 5} + ${n} = ${p}`]);
+    case 8: return T('Double three times', [`${n} → ${n * 2} → ${n * 4} → ${p}`]);
+    case 7: return T('×7 is ×5 plus ×2', [`${n} × 5 = ${n * 5}`, `${n} × 2 = ${n * 2}`, `${n * 5} + ${n * 2} = ${p}`]);
+  }
+}
+
+function techDivFact(n, d) {
+  const q = n / d, lines = [`Ask: ${d} × what = ${n}?`];
+  let name = 'Think multiplication';
+  if (d === 1) name = '÷1 keeps it the same';
+  else if (d === 2) { name = 'Halve it'; lines.push(`Half of ${n} = ${q}`); }
+  else if (d === 10) { name = '÷10 drops a zero'; lines.push(`${n} → ${q}`); }
+  else if (d === 5) { name = '÷5 is double, then ÷10'; lines.push(`${n} × 2 = ${n * 2}`, `${n * 2} ÷ 10 = ${q}`); }
+  else if (d === 4) { name = 'Halve twice'; lines.push(`${n} → ${n / 2} → ${q}`); }
+  else if (d === 8) { name = 'Halve three times'; lines.push(`${n} → ${n / 2} → ${n / 4} → ${q}`); }
+  else if (d === 6) { name = 'Halve, then ÷3'; lines.push(`${n} ÷ 2 = ${n / 2}`, `${n / 2} ÷ 3 = ${q}`); }
+  else if (d === 12) { name = 'Halve, then ÷6'; lines.push(`${n} ÷ 2 = ${n / 2}`, `${n / 2} ÷ 6 = ${q}`); }
+  else if (d === 9 && n <= 90) { name = 'The 9s shortcut'; lines.push(`Tens digit of ${n} is ${Math.floor(n / 10)}, add 1 → ${q}`); }
+  else if (d === 11 && n <= 99) { name = '11s repeat the digit'; lines.push(`${n} is ${q} written twice → ${q}`); }
+  else if (d === 3 || d === 7) { const near = [5, 10].map(k => k * d).filter(v => v <= n).pop();
+    if (near && near !== n) { name = 'Jump from a fact you know'; lines.push(`${d} × ${near / d} = ${near}`, `${n} − ${near} = ${n - near}, that's ${(n - near) / d} more ${d}s`); } }
+  lines.push(`${d} × ${q} = ${n}`);
+  return T(name, lines);
+}
+
+const fmtDec = v => { const r4 = Math.round(v * 1e4) / 1e4; if (Math.abs(r4 - v) < 1e-12) return String(r4); return (Math.round(v * 1000) / 1000).toFixed(3).replace(/0+$/, ''); };
+const pad2 = n => String(n).padStart(2, '0');
+function techFrac(num, den) {
+  const v = num / den, ans = fmtDec(v), rep = Math.abs(Math.round(v * 1e4) / 1e4 - v) > 1e-12;
+  const end = rep ? `≈ ${ans}` : `= ${ans}`;
+  switch (den) {
+    case 2: return T('Halves', ['1/2 = 0.5']);
+    case 4: return T('Quarters count by 0.25', ['1/4 = 0.25', `${num} × 0.25 = ${ans}`]);
+    case 5: return T('Fifths: double, then ÷10', [`${num} × 2 = ${num * 2}`, `${num * 2} ÷ 10 = ${ans}`]);
+    case 8: return T('Eighths count by 0.125', ['1/8 = 0.125', `${num} × 0.125 = ${ans}`]);
+    case 16: return T('Sixteenths are half of eighths', ['1/16 = 0.0625', `${num}/16 = half of ${num}/8 = ${ans}`]);
+    case 20: return T('Twentieths count by 0.05', [`${num} × 5 = ${num * 5}`, `${num}/20 = 0.${pad2(num * 5)}`]);
+    case 3: return T('Thirds repeat', ['1/3 = 0.333…', '2/3 = 0.666…, rounds to 0.667', `${num}/3 ${end}`]);
+    case 6: return T('Sixths come from thirds', ['1/6 is half of 1/3 = 0.1666… ≈ 0.167', num === 5 ? '5/6 = 1 − 1/6 = 0.833' : '']);
+    case 9: return T('Ninths repeat the top number', [`${num}/9 = 0.${String(num).repeat(3)}…`, `${num}/9 ${end}`]);
+    case 11: return T('Elevenths: top × 9, repeated', [`${num} × 9 = ${pad2(num * 9)}`, `${num}/11 = 0.${pad2(num * 9).repeat(2)}…`, `${num}/11 ${end}`]);
+    case 12: {
+      const m = { 1: '1/12 is half of 1/6 = 0.0833…', 5: '5/12 = 1/3 + 1/12 = 0.333 + 0.083', 7: '7/12 = 1/2 + 1/12 = 0.5 + 0.083', 11: '11/12 = 1 − 1/12 = 1 − 0.083' };
+      return T('Twelfths from what you know', [m[num], `${num}/12 ${end}`]);
+    }
+    case 7: return T('Sevenths cycle 142857', ['1/7 = 0.142857…', `Every ${'seventh'} uses the same 6 digits, starting in a different spot`, `${num}/7 = ${v.toFixed(6)}… ${end}`]);
+  }
+  return T('Divide it out', [`${num} ÷ ${den} ${end}`]);
+}
+
+// ---- problem generators ----
+function genAdd(lv) {
+  let a, b;
+  if (lv === 1) { if (Math.random() < .5) { a = rnd(14, 89); b = rnd(4, 9); } else { a = rnd(12, 49); b = rnd(11, 39); } }
+  else if (lv === 2) { a = rnd(23, 89); b = pick([rnd(13, 89), rnd(1, 8) * 10 + 9, rnd(1, 8) * 10 + 8, (rnd(1, 8) * 10) + (10 - a % 10 || 5)]); }
+  else { a = rnd(120, 899); b = pick([rnd(35, 499), rnd(3, 49) * 10 + 9, rnd(13, 99)]); }
+  return { text: `${a} + ${b}`, ans: a + b, tip: techAdd(a, b) };
+}
+function genSub(lv) {
+  let a, b;
+  if (lv === 1) { if (Math.random() < .5) { a = rnd(21, 95); b = rnd(3, 9); } else { a = rnd(30, 60); b = rnd(11, a - 6); } }
+  else if (lv === 2) { a = rnd(42, 99); b = pick([rnd(13, a - 5), Math.max(13, a - rnd(3, 15)), Math.min(a - 12, rnd(1, 8) * 10 + 9)]); if (b < 11) b = 11; }
+  else { a = rnd(300, 999); b = pick([rnd(57, a - 40), rnd(10, Math.floor(a / 10) - 3) * 10 + 8, a - rnd(4, 22)]); }
+  if (b >= a) b = a - rnd(3, 9);
+  return { text: `${a} − ${b}`, ans: a - b, tip: techSub(a, b) };
+}
+function genMul(lv) {
+  let a, b;
+  if (lv === 1) { a = rnd(12, 49); b = rnd(2, 9); if (a % 10 === 0) a++; }
+  else if (lv === 2) {
+    const k = rnd(0, 6);
+    if (k === 0) { a = rnd(51, 99); b = rnd(3, 9); }
+    else if (k === 1) { a = rnd(12, 99); b = 11; }
+    else if (k === 2) { a = rnd(13, 99); b = 5; }
+    else if (k === 3) { a = rnd(4, 36); b = 25; }
+    else if (k === 4) { a = rnd(13, 99); b = 9; }
+    else if (k === 5) { a = pick([15, 25, 35, 45]); b = pick([4, 6, 8, 12, 14, 16, 18]); }
+    else { a = rnd(2, 9) * 10 + pick([8, 9]); b = rnd(3, 9); }
+  } else {
+    const k = rnd(0, 6);
+    if (k === 0) { a = rnd(13, 49); b = rnd(12, 29); }
+    else if (k === 1) { a = pick([rnd(13, 39), pick([15, 25, 35, 45, 55, 65, 75, 85, 95])]); b = a; }
+    else if (k === 2) { const m = rnd(2, 9) * 10, h = rnd(1, 5); a = m - h; b = m + h; }
+    else if (k === 3) { a = rnd(12, 99); b = 11; }
+    else if (k === 4) { a = pick([19, 21, 29, 31, 39, 41, 49, 51, 99]); b = rnd(12, 48); }
+    else if (k === 5) { a = pick([15, 35, 45, 55, 65]); b = pick([12, 14, 16, 18, 22, 24]); }
+    else { a = rnd(13, 99); b = pick([4, 8, 12]); }
+  }
+  if (Math.random() < .5) [a, b] = [b, a];
+  return { text: `${a} × ${b}`, ans: a * b, tip: techMul(a, b) };
+}
+function genDiv(lv) {
+  let d, q;
+  if (lv === 1) { d = rnd(2, 9); q = rnd(11, 25); }
+  else if (lv === 2) { const k = rnd(0, 3); d = k === 0 ? 5 : k === 1 ? pick([4, 8]) : rnd(3, 9); q = rnd(12, 99); }
+  else { if (Math.random() < .25) { d = 25; q = rnd(4, 39); } else { d = rnd(11, 19); q = rnd(12, 39); } }
+  const n = d * q;
+  return { text: `${n} ÷ ${d}`, ans: q, tip: techDiv(n, d) };
+}
+const GEN = { add: genAdd, sub: genSub, mul: genMul, div: genDiv };
+function genTrain(op, lv) { return GEN[op === 'mix' ? pick(['add', 'sub', 'mul', 'div']) : op](lv); }
+// ENGINE END
+
+(() => {
+  const $ = id => document.getElementById(id);
+  const store = {
+    get(k, d) { try { const v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); } catch { return d; } },
+    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} }
+  };
+  const ALL = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  const DENS = [2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 16, 20];
+  const S = Object.assign({ tab: 'train', op: 'mul', lv: 2, mode: 'learn', tables: [6, 7, 8, 9, 12], divs: [6, 7, 8, 9, 12], dkind: 'facts', dens: [3, 4, 6, 8] }, store.get('mm2.settings', {}));
+  const save = () => store.set('mm2.settings', S);
+  let facts = store.get('mm2.facts', {});
+  const gcd = (a, b) => b ? gcd(b, a % b) : a;
+
+  // ---- fact mastery ----
+  const status = k => { const r = facts[k]; if (!r) return 0; if (r.s >= 3 && r.t < 3000) return 3; if (r.s >= 1) return 2; return 1; };
+  function record(k, ok, ms) {
+    const r = facts[k] || { s: 0, t: 0, n: 0 };
+    r.n++; if (ok) { r.s++; r.t = ms; } else r.s = 0;
+    facts[k] = r; store.set('mm2.facts', facts);
+  }
+  const mKey = (a, b) => `m${Math.min(a, b)}x${Math.max(a, b)}`;
+  const dKey = (d, q) => `d${d}:${q}`;
+  const fKey = (n, d) => `f${n}/${d}`;
+  const WEIGHT = [3, 6, 2, .4];
+  function weighted(pool) {
+    const w = pool.map(p => WEIGHT[status(p.key)]), tot = w.reduce((a, b) => a + b, 0);
+    let r = Math.random() * tot;
+    for (let i = 0; i < pool.length; i++) { r -= w[i]; if (r <= 0) return pool[i]; }
+    return pool[pool.length - 1];
+  }
+  function tablePool() {
+    const out = [];
+    for (const t of S.tables) for (const k of ALL) {
+      const [a, b] = Math.random() < .5 ? [t, k] : [k, t];
+      out.push({ text: `${a} × ${b}`, ans: a * b, key: mKey(a, b), tip: techFact(a, b) });
+    }
+    return out;
+  }
+  function divPool() {
+    const out = [];
+    for (const d of S.divs) for (const q of ALL) out.push({ text: `${d * q} ÷ ${d}`, ans: q, key: dKey(d, q), tip: techDivFact(d * q, d) });
+    return out;
+  }
+  function fracPool() {
+    const out = [];
+    for (const d of S.dens) for (let n = 1; n < d; n++) if (gcd(n, d) === 1) out.push({ text: `${n} ÷ ${d}`, ans: n / d, dec: true, key: fKey(n, d), tip: techFrac(n, d) });
+    return out;
+  }
+
+  // ---- tabs ----
+  function setTab(t) { S.tab = t; save(); show('v-' + t); renderAll(); }
+  $('tabs').addEventListener('click', e => { const b = e.target.closest('.tab'); if (b) setTab(b.dataset.tab); });
+  function show(id) {
+    ['v-train', 'v-tables', 'v-div', 'v-play', 'v-done'].forEach(v => $(v).hidden = v !== id);
+    $('tabs').hidden = id === 'v-play' || id === 'v-done';
+    document.querySelectorAll('.tab').forEach(b => b.setAttribute('aria-selected', String(b.dataset.tab === S.tab)));
+    document.documentElement.style.overflow = id === 'v-play' ? 'hidden' : '';
+    window.scrollTo(0, 0);
+  }
+
+  // ---- collapsible cards remember open/closed ----
+  const secState = store.get('mm2.secs', {});
+  document.querySelectorAll('details.sec').forEach(d => {
+    const k = d.dataset.sec;
+    if (k in secState) d.open = !!secState[k];
+    d.addEventListener('toggle', () => { secState[k] = d.open; store.set('mm2.secs', secState); });
+  });
+
+  // ---- train tab ----
+  const LV = { add: ['2-digit', '2-digit + tricks', '3-digit'], sub: ['2-digit', '2-digit + tricks', '3-digit'], mul: ['2d × 1d', 'Tricks: ×5 ×9 ×11 ×25', '2d × 2d, squares'], div: ['÷ 1-digit', 'Bigger, ÷4 ÷5 ÷8', '÷ 2-digit, ÷25'], mix: ['Easy', 'Medium', 'Hard'] };
+  function single(id, prop, cast) {
+    $(id).addEventListener('click', e => { const b = e.target.closest('.chip'); if (!b) return; S[prop] = cast(b.dataset.v); save(); renderAll(); });
+  }
+  single('t-op', 'op', String); single('t-lv', 'lv', Number); single('t-mode', 'mode', String); single('d-kind', 'dkind', String);
+  const press_ = (id, v) => $(id).querySelectorAll('.chip').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v == v)));
+  function renderTrain() {
+    press_('t-op', S.op); press_('t-lv', S.lv); press_('t-mode', S.mode);
+    $('t-lv').querySelectorAll('small').forEach((s, i) => s.textContent = LV[S.op][i]);
+    const p = genTrain(S.op, S.lv);
+    $('t-sample').textContent = p.text; $('t-sample-how').textContent = 'Fastest way: ' + p.tip.name;
+    const best = store.get(`mm2.best.${S.op}.${S.lv}`, null);
+    $('t-best').textContent = best == null ? '—' : best;
+    $('t-start').textContent = S.mode === 'sprint' ? 'Start 60-second sprint' : 'Start 20 problems';
+    const total = store.get('mm.total', 0);
+    $('lifetime').textContent = `${total.toLocaleString()} solved`;
+  }
+
+  // ---- multi-select chips ----
+  function buildPick(id, values, prop) {
+    $(id).innerHTML = values.map(v => `<button class="chip num" data-v="${v}">${v}</button>`).join('');
+    $(id).addEventListener('click', e => {
+      const b = e.target.closest('.chip'); if (!b) return;
+      const v = Number(b.dataset.v), arr = S[prop];
+      S[prop] = arr.includes(v) ? arr.filter(x => x !== v) : [...arr, v].sort((a, b) => a - b);
+      save(); renderAll();
+    });
+  }
+  buildPick('m-pick', ALL, 'tables'); buildPick('d-pick', ALL, 'divs'); buildPick('f-pick', DENS, 'dens');
+  const setAll = (prop, vals) => () => { S[prop] = vals; save(); renderAll(); };
+  $('m-all').onclick = setAll('tables', ALL); $('m-none').onclick = setAll('tables', []);
+  $('d-all').onclick = setAll('divs', ALL); $('d-none').onclick = setAll('divs', []);
+  $('f-all').onclick = setAll('dens', DENS); $('f-none').onclick = setAll('dens', []);
+  const pressMulti = (id, arr) => $(id).querySelectorAll('.chip').forEach(b => b.setAttribute('aria-pressed', String(arr.includes(Number(b.dataset.v)))));
+
+  // ---- grids ----
+  function techHTML(t, verdict, cls) {
+    return `${verdict ? `<div class="verdict ${cls || ''}">${verdict}</div>` : ''}<div class="name">${t.name}</div><ol>${t.lines.map(l => `<li>${l}</li>`).join('')}</ol>`;
+  }
+  let selCell = { m: null, d: null };
+  function buildGrid(id, kind) {
+    const g = $(id);
+    let h = `<div class="h lab">${kind === 'm' ? '×' : '÷'}</div>` + ALL.map(c => `<div class="h lab">${c}</div>`).join('');
+    for (const r of ALL) {
+      h += `<div class="h">${r}</div>`;
+      for (const c of ALL) h += `<button class="cell" data-r="${r}" data-c="${c}" aria-label="${kind === 'm' ? `${r} times ${c}` : `${r * c} divided by ${r}`}">${r * c}</button>`;
+    }
+    g.innerHTML = h;
+    g.addEventListener('click', e => {
+      const b = e.target.closest('.cell'); if (!b) return;
+      const r = +b.dataset.r, c = +b.dataset.c;
+      selCell[kind] = `${r},${c}`;
+      const t = kind === 'm' ? techFact(r, c) : techDivFact(r * c, r);
+      const txt = kind === 'm' ? `${r} × ${c} = ${r * c}` : `${r * c} ÷ ${r} = ${c}`;
+      $(kind === 'm' ? 'm-tip' : 'd-tip').innerHTML = techHTML(t, txt);
+      renderGrids();
+    });
+  }
+  buildGrid('m-grid', 'm'); buildGrid('d-grid', 'd');
+  function renderGrids() {
+    let mm = 0, dm = 0;
+    $('m-grid').querySelectorAll('.cell').forEach(el => {
+      const r = +el.dataset.r, c = +el.dataset.c, s = status(mKey(r, c));
+      el.className = `cell s${s}` + (S.tables.includes(r) || S.tables.includes(c) ? '' : ' off') + (selCell.m === `${r},${c}` ? ' sel' : '');
+      if (s === 3 && r <= c) mm++;
+    });
+    $('d-grid').querySelectorAll('.cell').forEach(el => {
+      const r = +el.dataset.r, c = +el.dataset.c, s = status(dKey(r, c));
+      el.className = `cell s${s}` + (S.divs.includes(r) ? '' : ' off') + (selCell.d === `${r},${c}` ? ' sel' : '');
+      if (s === 3) dm++;
+    });
+    $('m-count').textContent = `${mm} of 78 mastered`;
+    $('d-count').textContent = S.dkind === 'facts' ? `${dm} of 144 mastered` : '';
+    $('s-mgrid').textContent = `${mm}/78`;
+    $('s-dgrid').textContent = `${dm}/144`;
+  }
+  const ANCH = [[2, 1], [3, 1], [4, 1], [5, 1], [6, 1], [7, 1], [8, 1], [9, 1], [11, 1], [12, 1], [16, 1], [20, 1]];
+  $('f-anchors').innerHTML = ANCH.map(([d, n]) => `<div><b>${n}/${d}</b><span>${fmtDec(n / d)}</span></div>`).join('');
+  $('f-anchors').addEventListener('click', () => {});
+
+  function renderTables() {
+    pressMulti('m-pick', S.tables);
+    $('m-start').disabled = !S.tables.length;
+    $('m-start').textContent = S.tables.length ? 'Practice 20 facts' : 'Pick at least one table';
+  }
+  function renderDiv() {
+    press_('d-kind', S.dkind);
+    $('d-facts').hidden = S.dkind !== 'facts'; $('d-frac').hidden = S.dkind !== 'frac';
+    pressMulti('d-pick', S.divs); pressMulti('f-pick', S.dens);
+    const arr = S.dkind === 'facts' ? S.divs : S.dens;
+    $('d-start').disabled = !arr.length;
+    $('d-start').textContent = arr.length ? 'Practice 20' : 'Pick at least one number';
+  }
+  function renderSummaries() {
+    const OPN = { add: 'Addition', sub: 'Subtraction', mul: 'Multiplication', div: 'Division', mix: 'Mixed' };
+    const list = (a, all) => !a.length ? 'None' : a.length === all ? 'All' : a.join(', ');
+    $('s-op').textContent = OPN[S.op];
+    $('s-lv').textContent = ['Easy', 'Medium', 'Hard'][S.lv - 1];
+    $('s-mode').textContent = S.mode === 'sprint' ? 'Sprint' : 'Learn';
+    $('s-tables').textContent = list(S.tables, 12);
+    $('s-divs').textContent = list(S.divs, 12);
+    $('s-dens').textContent = list(S.dens, DENS.length);
+  }
+  function renderAll() { renderTrain(); renderTables(); renderDiv(); renderGrids(); renderSummaries(); }
+
+  // ---- play engine ----
+  let run = null, timer = null;
+  const SPRINT = 60, COUNT = 20;
+  function begin(cfg) {
+    run = Object.assign({ correct: 0, misses: [], slow: [], times: [], n: 0, input: '', p: null, waiting: false, missed: false, startT: performance.now() }, cfg);
+    show('v-play');
+    $('meter').style.width = cfg.mode === 'sprint' ? '100%' : '0%';
+    nextProblem();
+    if (cfg.mode === 'sprint') timer = setInterval(tick, 200);
+    hud();
+  }
+  function tick() {
+    const left = SPRINT - (performance.now() - run.startT) / 1000;
+    $('meter').style.width = Math.max(0, left / SPRINT * 100) + '%';
+    if (left <= 0) finish();
+  }
+  function hud() {
+    $('hud').textContent = run.mode === 'sprint' ? run.correct : `${Math.min(run.n + 1, COUNT)}/${COUNT}`;
+    if (run.mode !== 'sprint') $('meter').style.width = (run.n / COUNT * 100) + '%';
+  }
+  function nextProblem() {
+    let p, tries = 0;
+    do { p = run.gen(); } while (run.p && p.text === run.p.text && ++tries < 20);
+    run.p = p; run.input = ''; run.qT = performance.now(); run.waiting = false; run.missed = false;
+    $('problem').textContent = p.text;
+    $('answer').textContent = ''; $('answer').className = 'answer';
+    $('feedback').hidden = true; $('pad').hidden = false; $('nextwrap').hidden = true;
+    $('showme').hidden = run.mode === 'sprint';
+    $('dotKey').disabled = !p.dec;
+    hud();
+  }
+  const fmtAns = p => p.dec ? fmtDec(p.ans) : String(p.ans);
+  function isRight(inp, p) {
+    if (!inp || inp === '.') return false;
+    const v = Number(inp);
+    return p.dec ? Math.abs(v - p.ans) < 0.0007 : v === p.ans;
+  }
+  function press(k) {
+    if (!run) return;
+    if (run.waiting) { if (k === 'enter' && !$('nextwrap').hidden) advance(); return; }
+    if (k === 'back') run.input = run.input.slice(0, -1);
+    else if (k === 'enter') return submit();
+    else if (k === '.') { if (!run.p.dec || run.input.includes('.')) return; run.input += '.'; }
+    else if (run.input.length < 7) run.input += k;
+    $('answer').textContent = run.input; $('answer').className = 'answer';
+    if (isRight(run.input, run.p)) submit();
+  }
+  function showFeedback(verdict, cls) {
+    $('feedback').innerHTML = techHTML(run.p.tip, verdict, cls);
+    $('feedback').hidden = false; $('pad').hidden = true; $('nextwrap').hidden = false; $('showme').hidden = true;
+    run.waiting = true;
+    $('next').textContent = run.n + 1 >= COUNT ? 'See results' : 'Next';
+  }
+  function submit(reveal) {
+    const p = run.p, ms = performance.now() - run.qT, sec = (ms / 1000).toFixed(1);
+    if (!reveal && !run.input) return;
+    const ok = !reveal && isRight(run.input, p);
+    if (ok) {
+      if (!run.missed) { run.correct++; run.times.push(ms); }
+      if (p.key) record(p.key, true, ms);
+      $('answer').className = 'answer good';
+      if (run.mode === 'sprint') { run.waiting = true; hud(); setTimeout(() => run && nextProblem(), 140); return; }
+      if (run.mode === 'facts' && ms < 3000) { run.waiting = true; setTimeout(() => run && advance(), 200); return; }
+      if (run.mode === 'facts') run.slow.push({ ...p, given: `${sec}s` });
+      showFeedback(run.mode === 'facts' ? `✓ Correct, ${sec}s. Here's a quicker way` : `✓ Correct · ${sec}s`, 'ok');
+      return;
+    }
+    if (!run.missed) { run.misses.push({ ...p, given: reveal ? 'shown' : run.input }); if (p.key) record(p.key, false, ms); }
+    run.missed = true;
+    const a = $('answer'); a.className = 'answer'; void a.offsetWidth; a.className = 'answer bad';
+    if (run.mode === 'sprint') { setTimeout(() => { if (run && !run.waiting) { run.input = ''; $('answer').textContent = ''; $('answer').className = 'answer'; } }, 320); return; }
+    const said = reveal ? '' : ` You said ${run.input}.`;
+    a.textContent = fmtAns(p);
+    showFeedback(`✕ The answer is ${fmtAns(p)}.${said}`, 'no');
+  }
+  function advance() {
+    if (run.mode === 'sprint') return nextProblem();
+    run.n++;
+    if (run.n >= COUNT) return finish();
+    nextProblem();
+  }
+  function finish() {
+    clearInterval(timer); timer = null;
+    const r = run; run = null;
+    if (r.correct) store.set('mm.total', store.get('mm.total', 0) + r.correct);
+    let pb = false;
+    if (r.mode === 'sprint') {
+      const k = `mm2.best.${S.op}.${S.lv}`, best = store.get(k, 0);
+      if (r.correct > best) { store.set(k, r.correct); pb = true; }
+    }
+    $('r-score').textContent = r.correct;
+    let cap = r.mode === 'sprint' ? 'correct in 60 seconds' : `of ${COUNT} right on the first try`;
+    if (r.kind === 'tables') { renderGrids(); cap += ` · ${$('m-count').textContent}`; }
+    if (r.kind === 'divfacts') { renderGrids(); cap += ` · ${$('d-count').textContent}`; }
+    $('r-cap').textContent = cap;
+    $('r-pb').hidden = !pb;
+    const tried = r.correct + r.misses.length;
+    $('r-acc').textContent = tried ? Math.round(r.correct / tried * 100) + '%' : '—';
+    $('r-avg').textContent = r.times.length ? (r.times.reduce((s, t) => s + t, 0) / r.times.length / 1000).toFixed(1) + 's' : '—';
+    const list = [...r.misses.map(m => ({ ...m, tag: m.given === 'shown' ? 'Asked to see' : `You said ${m.given}` })), ...r.slow.map(m => ({ ...m, tag: `Slow · ${m.given}` }))];
+    $('r-miss').textContent = list.length;
+    $('r-review').innerHTML = list.length
+      ? list.map(m => `<div class="card miss"><div class="q"><span>${m.text} = ${fmtAns(m)}</span><em>${m.tag}</em></div><div class="tech">${techHTML(m.tip)}</div></div>`).join('')
+      : '<div class="clean">Nothing to review. Try a harder level.</div>';
+    run = null; lastCfg = r.cfg;
+    show('v-done');
+  }
+  let lastCfg = null;
+  function startTrain() { const cfg = { kind: 'train', mode: S.mode === 'sprint' ? 'sprint' : 'learn', gen: () => genTrain(S.op, S.lv) }; cfg.cfg = cfg; begin(cfg); }
+  function startTables() { const pool = tablePool(); const cfg = { kind: 'tables', mode: 'facts', gen: () => weighted(pool) }; cfg.cfg = cfg; begin(cfg); }
+  function startDiv() {
+    const pool = S.dkind === 'facts' ? divPool() : fracPool();
+    const cfg = { kind: S.dkind === 'facts' ? 'divfacts' : 'frac', mode: 'facts', gen: () => weighted(pool) }; cfg.cfg = cfg; begin(cfg);
+  }
+  $('t-start').onclick = startTrain; $('m-start').onclick = startTables; $('d-start').onclick = startDiv;
+  $('r-again').onclick = () => { const c = lastCfg; if (!c) return; ({ train: startTrain, tables: startTables, divfacts: startDiv, frac: startDiv })[c.kind](); };
+  $('r-menu').onclick = () => { show('v-' + S.tab); renderAll(); };
+  $('quit').onclick = () => { clearInterval(timer); timer = null; run = null; show('v-' + S.tab); renderAll(); };
+  $('next').onclick = () => run && advance();
+  $('showme').onclick = () => run && !run.waiting && submit(true);
+  $('pad').addEventListener('click', e => { const b = e.target.closest('.key'); if (b && !b.disabled) press(b.dataset.k); });
+  document.addEventListener('keydown', e => {
+    if (!run) return;
+    let k = null;
+    if (/^[0-9]$/.test(e.key)) k = e.key; else if (e.key === '.') k = '.';
+    else if (e.key === 'Backspace') k = 'back'; else if (e.key === 'Enter') k = 'enter';
+    if (!k) return;
+    e.preventDefault(); press(k);
+    const b = document.querySelector(`.key[data-k="${k}"]`);
+    if (b) { b.classList.add('flash'); setTimeout(() => b.classList.remove('flash'), 90); }
+  });
+
+  show('v-' + S.tab); renderAll();
+})();
+</script>
